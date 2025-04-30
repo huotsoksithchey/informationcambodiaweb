@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>សម្តេចហ៊ុន ម៉ាណែត ឆ្នាំ២០២៥ | Hun Manet 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #042379;
+            --secondary-color: #e9f0fb;
+            --accent-color: #ff6b00;
+        }
+        
+        body {
+            font-family: 'Khmer OS Battambang', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #0a369d);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-20px);
+            opacity: 0;
+            animation: slideDown 0.8s 0.2s forwards;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+        }
+        
+        .content-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        .content-box:nth-child(1) { animation-delay: 0.3s; }
+        .content-box:nth-child(2) { animation-delay: 0.4s; }
+        
+        .language-toggle {
+            text-align: center;
+            margin: 25px 0;
+            opacity: 0;
+            animation: fadeIn 0.8s 0.5s forwards;
+        }
+        
+        .language-toggle button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-toggle button:hover {
+            background-color: #0a369d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .khmer {
+            font-family: 'Khmer OS Battambang', sans-serif;
+            font-size: 1.1em;
+        }
+        
+        .english {
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .profile-img-container {
+            text-align: center;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: scale(0.95);
+            transition: all 0.4s ease;
+        }
+        
+        .profile-img-container:hover {
+            transform: scale(1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .profile-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.03);
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
+            opacity: 0;
+            animation: fadeInRight 0.5s forwards;
+        }
+        
+        li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-img {
+                max-width: 320px;
+                float: right;
+                margin: 0 0 20px 25px;
+            }
+            
+            .content-box {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 22px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .content-box {
+                padding: 20px;
+            }
+            
+            .language-toggle button {
+                padding: 8px 15px;
+                margin: 0 5px;
+            }
+        }
+        
+        /* Custom Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                transform: translateX(10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* List item animation delays */
+        li:nth-child(1) { animation-delay: 0.6s; }
+        li:nth-child(2) { animation-delay: 0.7s; }
+        li:nth-child(3) { animation-delay: 0.8s; }
+        li:nth-child(4) { animation-delay: 0.9s; }
+        li:nth-child(5) { animation-delay: 1.0s; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="khmer">សម្តេចហ៊ុន ម៉ាណែត ឆ្នាំ២០២៥</h1>
+        <h1 class="english">Hun Manet 2025</h1>
+    </div>
+
+    <div class="language-toggle">
+        <button onclick="showEnglish()">English</button>
+        <button onclick="showKhmer()">ភាសាខ្មែរ</button>
+    </div>
+
+    <div class="content-box english">
+        <div class="profile-img-container animate__animated animate__zoomIn">
+            <img src="훈_마넷_캄보디아_총리_(2024년_5월_17일) (1).jpg" alt="Hun Manet" class="profile-img">
+        </div>
+        
+        <h2 class="animate__animated animate__fadeIn">Hun Manet in 2025</h2>
+        <p class="animate__animated animate__fadeIn">As Cambodia's Prime Minister in 2025, Hun Manet continues to lead the country with a focus on modernization and economic development. The son of former Prime Minister Hun Sen, he represents a new generation of Cambodian leadership.</p>
+
+        <h3 class="animate__animated animate__fadeIn">Key Achievements in 2025</h3>
+        <ul>
+            <li><strong>Economic Growth:</strong> Maintained GDP growth at 6.5% despite global challenges</li>
+            <li><strong>Digital Cambodia:</strong> Expanded nationwide 5G coverage and e-government services</li>
+            <li><strong>Infrastructure:</strong> Completed Phase 2 of the Phnom Penh-Sihanoukville Expressway</li>
+            <li><strong>Foreign Policy:</strong> Strengthened ASEAN relations while balancing ties with China and Western nations</li>
+            <li><strong>Education Reform:</strong> Implemented new vocational training programs nationwide</li>
+        </ul>
+
+        <h3 class="animate__animated animate__fadeIn">Challenges Faced</h3>
+        <p class="animate__animated animate__fadeIn">In 2025, Prime Minister Hun Manet faces several challenges including:</p>
+        <ul>
+            <li>Managing Cambodia's debt-to-GDP ratio</li>
+            <li>Addressing youth unemployment</li>
+            <li>Balancing environmental concerns with development needs</li>
+            <li>Navigating complex international geopolitics</li>
+        </ul>
+
+        <h3 class="animate__animated animate__fadeIn">Future Outlook</h3>
+        <p class="animate__animated animate__fadeIn">Looking ahead, the Hun Manet administration plans to focus on:</p>
+        <ul>
+            <li>Further digital transformation of government services</li>
+            <li>Expanding Cambodia's manufacturing capabilities</li>
+            <li>Developing renewable energy infrastructure</li>
+            <li>Enhancing regional cooperation within ASEAN</li>
+        </ul>
+    </div>
+
+    <div class="content-box khmer hidden">
+        <div class="profile-img-container animate__animated animate__zoomIn">
+            <img src="훈_마넷_캄보디아_총리_(2024년_5월_17일) (1).jpg" alt="សម្តេចហ៊ុន ម៉ាណែត" class="profile-img">
+        </div>
+        
+        <h2 class="animate__animated animate__fadeIn">សម្តេចហ៊ុន ម៉ាណែត ឆ្នាំ២០២៥</h2>
+        <p class="animate__animated animate__fadeIn">ជានាយករដ្ឋមន្ត្រីកម្ពុជានៅឆ្នាំ២០២៥ សម្តេចហ៊ុន ម៉ាណែត បានបន្តដឹកនាំប្រទេសដោយផ្តោតលើការទំនើបគ្រប់គ្រង និងការអភិវឌ្ឍសេដ្ឋកិច្ច។ ជាកូនប្រុសរបស់អតីតនាយករដ្ឋមន្ត្រីហ៊ុន សែន លោកតំណាងឱ្យសំណាក់ដឹកនាំជំនាន់ថ្មីនៃកម្ពុជា។</p>
+
+        <h3 class="animate__animated animate__fadeIn">ជោគជ័យសំខាន់ៗនៅឆ្នាំ២០២៥</h3>
+        <ul>
+            <li><strong>កំណើនសេដ្ឋកិច្ច៖</strong> រក្សាកំណើន GDP នៅ 6.5% ទោះបីមានការលំបាកជាសកល</li>
+            <li><strong>ឌីជីថលកម្ពុជា៖</strong> ពង្រីកការគ្របដណ្តប់ 5G ទូទាំងប្រទេស និងសេវារដ្ឋាភិបាលអេឡិចត្រូនិក</li>
+            <li><strong>ហេដ្ឋារចនាសម្ព័ន្ធ៖</strong> បានបញ្ចប់ដំណាក់កាលទី២នៃផ្លូវយោធាភ្នំពេញ-ព្រះសីហនុ</li>
+            <li><strong>នយោបាយការបរទេស៖</strong> ពង្រឹងទំនាក់ទំនងអាស៊ាន ខណៈដែលរក្សាតុល្យភាពទំនាក់ទំនងជាមួយចិន និងប្រទេសខាងលិច</li>
+            <li><strong>កំណែទម្រង់អប់រំ៖</strong> អនុវត្តកម្មវិធីបណ្តុះបណ្តាលវិជ្ជាជីវថ្មីទូទាំងប្រទេស</li>
+        </ul>
+
+        <h3 class="animate__animated animate__fadeIn">បញ្ហាប្រឈម</h3>
+        <p class="animate__animated animate__fadeIn">នៅឆ្នាំ២០២៥ នាយករដ្ឋមន្ត្រីហ៊ុន ម៉ាណែត ប្រឈមមុខនឹងបញ្ហាប្រឈមជាច្រើនរួមមាន៖</p>
+        <ul>
+            <li>ការគ្រប់គ្រងសមាមាត្របំណុលទៅនឹង GDP របស់កម្ពុជា</li>
+            <li>ការដោះស្រាយអត្រាអ្នកគ្មានការងារធ្វើក្នុងចំណោមយុវជន</li>
+            <li>ការរក្សាតុល្យភាពរវាងបញ្ហាបរិស្ថាន និងតម្រូវការអភិវឌ្ឍន៍</li>
+            <li>ការដើរតាមភូមិសាស្ត្រនយោបាយអន្តរជាតិស្មុគស្មាញ</li>
+        </ul>
+
+        <h3 class="animate__animated animate__fadeIn">ទស្សនៈអនាគត</h3>
+        <p class="animate__animated animate__fadeIn">សូមក្រឡេកមើលទៅអនាគត រដ្ឋាភិបាលហ៊ុន ម៉ាណែត មានគម្រោងផ្តោតលើ៖</p>
+        <ul>
+            <li>ការផ្លាស់ប្តូរឌីជីថលបន្ថែមទៀតនៃសេវារដ្ឋាភិបាល</li>
+            <li>ការពង្រីកសមត្ថភាពផលិតកម្មរបស់កម្ពុជា</li>
+            <li>ការអភិវឌ្ឍហេដ្ឋារចនាសម្ព័ន្ធថាមពលដែលអាចផ្គត់ផ្គង់បានឡើងវិញ</li>
+            <li>ការពង្រឹងកិច្ចសហប្រតិបត្តិការក្នុងតំបន់អាស៊ាន</li>
+        </ul>
+    </div>
+    <marquee 
+    behavior="alternate" 
+    direction="right" 
+    scrollamount="8" 
+    scrolldelay="50" 
+    loop="infinite" 
+    bgcolor="WHITE" 
+    width="100%"
+    >
+  🎉&#x1F60A; THIS IS HiSTORY OF SOMDACH HUNMANET🎉
+    </marquee>
+    <script>
+        function showEnglish() {
+            document.querySelectorAll('.english').forEach(el => {
+                el.classList.remove('hidden');
+                el.classList.add('animate__animated', 'animate__fadeIn');
+            });
+            document.querySelectorAll('.khmer').forEach(el => el.classList.add('hidden'));
+        }
+        
+        function showKhmer() {
+            document.querySelectorAll('.khmer').forEach(el => {
+                el.classList.remove('hidden');
+                el.classList.add('animate__animated', 'animate__fadeIn');
+            });
+            document.querySelectorAll('.english').forEach(el => el.classList.add('hidden'));
+        }
+        
+        // Animate list items when they come into view
+        const animateListItems = () => {
+            const listItems = document.querySelectorAll('li');
+            listItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.animation = `fadeInRight 0.5s forwards ${index * 0.1}s`;
+                }, 100);
+            });
+        };
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            showEnglish();
+            setTimeout(animateListItems, 600);
+        });
+    </script>
+
+</body>
+</html>
